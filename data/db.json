@@ -1,0 +1,82 @@
+[
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "image": "https://ecom.rangs.com.bd/storage/10895/860X740-01.jpg",
+      "price": 59.99,
+      "category": "Electronics",
+      "description": "High-quality wireless headphones with noise cancellation."
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "image": "https://dazzle.com.bd/_next/image?url=https%3A%2F%2Fdazzle.sgp1.cdn.digitaloceanspaces.com%2F15128%2FUntitled-design---2024-10-27T125509.167.png&w=640&q=75",
+      "price": 699.99,
+      "category": "Electronics",
+      "description": "Latest model smartphone with an advanced camera and powerful processor."
+    },
+    {
+      "id": 3,
+      "name": "Gaming Mouse",
+      "image": "https://www.startech.com.bd/image/cache/catalog/mouse/motospeed/v100/v-100-2-500x500.jpg",
+      "price": 29.99,
+      "category": "Accessories",
+      "description": "Ergonomic gaming mouse with customizable RGB lighting."
+    },
+    {
+      "id": 4,
+      "name": "Mechanical Keyboard",
+      "image": "https://keychron.ca/cdn/shop/products/Keychron-V3-Custom-Mechanical-Keyboard-knob-carbon-black-QMK-VIA-tenkeyless-hot-swappable-Keychron-K-Pro-switch-red-V3-D1_1800x1800_f2e13f95-a9b9-4d37-bb36-059c23b79b77.jpg?v=1666597228&width=900",
+      "price": 89.99,
+      "category": "Accessories",
+      "description": "Mechanical keyboard with responsive switches for gaming and typing."
+    },
+    {
+      "id": 5,
+      "name": "Smart Watch",
+      "image": "https://cdn.bdstall.com/product-image/giant_277057.jpg",
+      "price": 199.99,
+      "category": "Wearable Tech",
+      "description": "Feature-packed smartwatch with fitness tracking and notifications."
+    },
+    {
+      "id": 6,
+      "name": "4K Ultra HD TV",
+      "image": "https://www.startech.com.bd/image/cache/catalog/television/sony/kd-55x75k/bravia-kd-55x75k-01-500x500.webp",
+      "price": 999.99,
+      "category": "Electronics",
+      "description": "Stunning 4K UHD television with smart features and HDR support."
+    },
+    {
+      "id": 7,
+      "name": "Bluetooth Speaker",
+      "image": "https://paikaree.com.bd/public/uploads/products/photos/koleer-s39-bluetooth-speaker-paikaree-WKP9.webp",
+      "price": 49.99,
+      "category": "Audio",
+      "description": "Portable Bluetooth speaker with deep bass and long battery life."
+    },
+    {
+      "id": 8,
+      "name": "Laptop",
+      "image": "https://www.pchouse.com.bd/image/cache/catalog/ASUS/vivobook-15-020-500x500-600x500h.jpg.webp",
+      "price": 1299.99,
+      "category": "Computers",
+      "description": "Powerful laptop for work and gaming with a sleek design."
+    },
+    {
+      "id": 9,
+      "name": "External Hard Drive",
+      "image": "https://www.techlandbd.com/image/cache/catalog/Hard-Disk/Seagate/seagate-one-touch-10tb-hdd/seagate-10tb-one-touch-desktop-external-hdd-01-550x550.jpg",
+      "price": 79.99,
+      "category": "Storage",
+      "description": "1TB external hard drive for secure data storage and backups."
+    },
+    {
+      "id": 10,
+      "name": "Action Camera",
+      "image": "https://www.startech.com.bd/image/cache/catalog/camera/action-camera/cb77/cb77-4g-01-500x500.webp",
+      "price": 299.99,
+      "category": "Cameras",
+      "description": "Rugged action camera with 4K recording and waterproof casing."
+    }
+  ]
