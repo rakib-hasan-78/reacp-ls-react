@@ -52,4 +52,7 @@ body{
   height:calc(var(--primary-card-h));
 }
 
+.fixed-top-transition {
+  transition: top 0.3s ease-in-out;
+}
 
