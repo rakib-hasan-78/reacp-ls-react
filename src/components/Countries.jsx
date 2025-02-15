@@ -49,8 +49,8 @@ const Products = () => {
           cart.length>0 &&   (<Cart cart ={cart} />)
 
         }
-            <div className="w-100 row gap-5 ">
-                <div className="col-sm-1 col-lg-12 d-flex flex-wrap align-items-center justify-content-center gap-3 py-3">
+            <div className="row gap-5 ">
+                <div className="container-xl col-sm-1 col-lg-12 d-flex flex-wrap align-items-center justify-content-center gap-3 py-3">
                     {
                      products && products.map(product=>(
                         <Product key={product.id} product={product} cartHandler={cartHandler} removeHandler ={removeHandler } />

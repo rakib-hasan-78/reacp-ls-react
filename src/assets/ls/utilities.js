@@ -1,5 +1,7 @@
 // get items===>
 
+import Product from "../../components/Product";
+
 const getLS = ()=>{
     const getStorage = localStorage.getItem('cart');
     return getStorage ? JSON.parse(getStorage) : [];
@@ -31,5 +33,8 @@ const removeToLS = id=>{
     saveLS(restData);
 
 }
+
+
+
 
 export {getLS, addToList, removeToLS}

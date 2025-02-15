@@ -1,21 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { addToList, getLS, removeToLS } from '../assets/ls/utilities';
+
 
 const Product = ({product, cartHandler, removeHandler }) => {
+    
     const [isAdded, setIsAdded] = useState(false);
+    
+    useEffect(()=>{
+        const styleBtn = getLS();
+        setIsAdded(styleBtn.includes(product.id));
+
+    }, [product.id])
 
     const clickHandler = ()=>{
         setIsAdded(!isAdded);
         if (!isAdded) {
             cartHandler(product);
+            addToList(product.id)
         } else{
             removeHandler(product);
+            removeToLS(product.id)
         } 
 
     }
 
     return (
-        <div className='col-sm-1 col-lg-3 d-flex flex-column flex-wrap  border glassmorphism px-1'>
+        <div className='col-sm-1 col-lg-3 d-flex flex-column flex-wrap  border glassmorphism'>
             <div className='w-100 card-h'>
                 <img className='w-100 h-100 object-fit-cover rounded-3' src={product.image} alt="" />
             </div>
@@ -33,6 +44,6 @@ const Product = ({product, cartHandler, removeHandler }) => {
 Product.prototype={
     product:PropTypes.object.isRequired,
     cartHandler: PropTypes.func.isRequired,
-    removeHandler: PropTypes.func.isRequired
+    removeHandler: PropTypes.func.isRequired,
 }
 export default Product;
