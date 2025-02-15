@@ -26,7 +26,7 @@ const Product = ({product, cartHandler, removeHandler }) => {
     }
 
     return (
-        <div className='col-sm-1 col-lg-3 d-flex flex-column flex-wrap  border glassmorphism'>
+        <div className='col-sm-8 col-md-1 col-lg-3 d-flex  flex-column flex-wrap  border glassmorphism border-4 w-sm-75 w-md-100'>
             <div className='w-100 card-h'>
                 <img className='w-100 h-100 object-fit-cover rounded-3' src={product.image} alt="" />
             </div>
@@ -34,16 +34,18 @@ const Product = ({product, cartHandler, removeHandler }) => {
                 <h3 className='text-capitalize text-info text-center fs-5'>
                     {product.name}
                 </h3>
-                <div className='d-flex flex-wrap flex-column align-items-center justify-content-center'>
+                <div className='d-flex flex-wrap flex-column align-items-center justify-content-center w-100'>
                     <button onClick={clickHandler} type="button" className={`btn ${isAdded ? 'btn-danger':'btn-primary'} py-2 my-1 w-75`}>{isAdded? 'remove from list':'add to list'}</button>
                 </div>
                 </div>
             </div>
     );
 };
+
 Product.prototype={
     product:PropTypes.object.isRequired,
     cartHandler: PropTypes.func.isRequired,
     removeHandler: PropTypes.func.isRequired,
 }
+
 export default Product;

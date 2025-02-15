@@ -10,7 +10,7 @@ const Products = () => {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
-        fetch('../../data/db.json')
+        fetch('../src/data/db.json')
             .then(response=>response.json())
             .then(data=> setProducts(data))    
     }, []);
@@ -50,7 +50,7 @@ const Products = () => {
 
         }
             <div className="row gap-5 ">
-                <div className="container-xl col-sm-1 col-lg-12 d-flex flex-wrap align-items-center justify-content-center gap-3 py-3">
+                <div className="col-sm-1 col-lg-12 d-flex flex-wrap align-align-lg-center justify-content-center gap-3 py-3">
                     {
                      products && products.map(product=>(
                         <Product key={product.id} product={product} cartHandler={cartHandler} removeHandler ={removeHandler } />
