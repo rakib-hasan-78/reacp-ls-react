@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes, { any } from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Product = ({product, cartHandler, removeHandler }) => {
     const [isAdded, setIsAdded] = useState(false);
@@ -31,6 +31,8 @@ const Product = ({product, cartHandler, removeHandler }) => {
     );
 };
 Product.prototype={
-    product:PropTypes.any.isRequired,
+    product:PropTypes.object.isRequired,
+    cartHandler: PropTypes.func.isRequired,
+    removeHandler: PropTypes.func.isRequired
 }
 export default Product;

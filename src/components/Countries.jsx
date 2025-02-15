@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Product from './Product';
 import Cart from './Cart';
-import { addToList, removeToLS } from '../assets/ls/utilities';
+import { addToList, getLS, removeToLS } from '../assets/ls/utilities';
 
 const Products = () => {
 
@@ -9,12 +9,24 @@ const Products = () => {
 
     const [cart, setCart] = useState([]);
 
-    console.log(products.length)
     useEffect(() => {
         fetch('../../data/db.json')
             .then(response=>response.json())
             .then(data=> setProducts(data))    
     }, []);
+
+    useEffect(()=>{
+        if (products.length>0) {
+            const storedCart = getLS();
+
+            let savedCart = [];
+            storedCart.forEach(value=>{
+                const product = products.find(product=> product.id===value)
+                savedCart.push(product);
+            })
+            setCart(savedCart);
+        }
+    },[products])
 
     const cartHandler = (product)=>{
         setCart(prev=>{
@@ -33,7 +45,10 @@ const Products = () => {
 
     return (
         <section className='w-100 h-auto d-flex flex-sm-column flex-lg-row flex-wrap align-items-center justify-items-center'>
-            <Cart cart ={cart} />
+        {
+          cart.length>0 &&   (<Cart cart ={cart} />)
+
+        }
             <div className="w-100 row gap-5 ">
                 <div className="col-sm-1 col-lg-12 d-flex flex-wrap align-items-center justify-content-center gap-3 py-3">
                     {
