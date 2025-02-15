@@ -10,7 +10,7 @@ const Products = () => {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
-        fetch('../../public/data/db.json')
+        fetch('/data/db.json')
             .then(response=>response.json())
             .then(data=> setProducts(data))    
     }, []);
