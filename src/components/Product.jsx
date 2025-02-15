@@ -1,7 +1,19 @@
-import React from 'react';
-import PropTypes, { object } from 'prop-types';
+import React, { useState } from 'react';
+import PropTypes, { any } from 'prop-types';
 
-const Product = ({product}) => {
+const Product = ({product, cartHandler, removeHandler }) => {
+    const [isAdded, setIsAdded] = useState(false);
+
+    const clickHandler = ()=>{
+        setIsAdded(!isAdded);
+        if (!isAdded) {
+            cartHandler(product);
+        } else{
+            removeHandler(product);
+        } 
+
+    }
+
     return (
         <div className='col-sm-1 col-lg-3 d-flex flex-column flex-wrap  border glassmorphism px-1'>
             <div className='w-100 card-h'>
@@ -12,14 +24,13 @@ const Product = ({product}) => {
                     {product.name}
                 </h3>
                 <div className='d-flex flex-wrap flex-column align-items-center justify-content-center'>
-                    <button type="button" className='btn btn-primary py-2 my-1 w-75'>add to list</button>
-                    <button type="button" className='btn btn-danger py-2 my-1 w-75'>add to list</button>
+                    <button onClick={clickHandler} type="button" className={`btn ${isAdded ? 'btn-danger':'btn-primary'} py-2 my-1 w-75`}>{isAdded? 'remove from list':'add to list'}</button>
                 </div>
                 </div>
             </div>
     );
 };
 Product.prototype={
-    product:PropTypes.object.isRequired,
+    product:PropTypes.any.isRequired,
 }
 export default Product;
