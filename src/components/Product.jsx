@@ -2,50 +2,45 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { addToList, getLS, removeToLS } from '../assets/ls/utilities';
 
-
-const Product = ({product, cartHandler, removeHandler }) => {
-    
+const Product = ({ product, cartHandler, removeHandler }) => {
     const [isAdded, setIsAdded] = useState(false);
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         const styleBtn = getLS();
         setIsAdded(styleBtn.includes(product.id));
+    }, [product.id]);
 
-    }, [product.id])
-
-    const clickHandler = ()=>{
+    const clickHandler = () => {
         setIsAdded(!isAdded);
         if (!isAdded) {
             cartHandler(product);
-            addToList(product.id)
-        } else{
+            addToList(product.id);
+        } else {
             removeHandler(product);
-            removeToLS(product.id)
-        } 
-
-    }
+            removeToLS(product.id);
+        }
+    };
 
     return (
-        <div className='col-sm-8 col-md-1 col-lg-3 d-flex  flex-column flex-wrap  border glassmorphism border-4 w-sm-75 w-md-100'>
-            <div className='w-100 card-h'>
-                <img className='w-100 h-100 object-fit-cover rounded-3' src={product.image} alt="" />
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column align-items-center glassmorphism py-3">
+            <div className='w-100 card-h mb-3'>
+                <img className='w-100 h-100 object-fit-cover rounded-3' src={product.image} alt={product.name} />
             </div>
-            <div className='w-100 py-2'>
-                <h3 className='text-capitalize text-info text-center fs-5'>
-                    {product.name}
-                </h3>
-                <div className='d-flex flex-wrap flex-column align-items-center justify-content-center w-100'>
-                    <button onClick={clickHandler} type="button" className={`btn ${isAdded ? 'btn-danger':'btn-primary'} py-2 my-1 w-75`}>{isAdded? 'remove from list':'add to list'}</button>
-                </div>
-                </div>
-            </div>
+            <h3 className='text-capitalize text-center text-info fs-5'>{product.name}</h3>
+            <button 
+                onClick={clickHandler} 
+                className={`btn ${isAdded ? 'btn-danger' : 'btn-primary'} w-75 py-2 my-1`}
+            >
+                {isAdded ? 'Remove from list' : 'Add to list'}
+            </button>
+        </div>
     );
 };
 
-Product.prototype={
-    product:PropTypes.object.isRequired,
+Product.propTypes = {
+    product: PropTypes.object.isRequired,
     cartHandler: PropTypes.func.isRequired,
     removeHandler: PropTypes.func.isRequired,
-}
+};
 
 export default Product;
